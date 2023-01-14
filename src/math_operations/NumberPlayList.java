@@ -3,6 +3,7 @@ package math_operations;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class NumberPlayList {
     public static void main(String[] args) {
@@ -46,5 +47,12 @@ public class NumberPlayList {
         myList.forEach(n->{
             System.out.println("M5 : forEach lambda impl value" + n);
         });
+
+        //Method 6:Implicit Lambda Function to print double value
+        Function<Integer, Double> doubleFunction = Integer::doubleValue;
+        for (Integer n : myList) {
+            System.out.println("m5 :forEach Lambda double value :: " + doubleFunction.apply(n));
+        }
+
     }
 }
