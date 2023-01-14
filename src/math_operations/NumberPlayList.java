@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class NumberPlayList {
     public static void main(String[] args) {
@@ -51,8 +52,13 @@ public class NumberPlayList {
         //Method 6:Implicit Lambda Function to print double value
         Function<Integer, Double> doubleFunction = Integer::doubleValue;
         for (Integer n : myList) {
-            System.out.println("m5 :forEach Lambda double value :: " + doubleFunction.apply(n));
+            System.out.println("m6 :forEach Lambda double value :: " + doubleFunction.apply(n));
         }
 
+        //Method 7:Implicit Lambda Function to check even
+        Predicate<Integer> isEvenFunction = n -> n%2 == 0;
+        myList.forEach(n ->{
+            System.out.println("M7: forEach value of: "+ n + "check for Even:"+isEvenFunction.test(n) );
+        });
     }
 }
